@@ -28,17 +28,19 @@ while True:
     # .... se establece entre los intervalos de numeros naturales establecidos por el juego.  
 
     
-    while True: 
-        entrada = input(invitacion)
- 
-        try: 
-            entrada = int(entrada) 
-        except: 
-            pass 
-        else: 
-            if MIN <= entrada <= MAX: 
-                break 
-    return invitacion
+    def pedir_numero (maximo=MIN, minimo=MAX):
+        while True:
+            elegido=input("Elige un número")
+            try:
+                elegido=int(elegido)
+            except:
+                pass
+            if minimo<= elegido >=maximo:
+                break
+            elif elegido <=minimo or elegido>=maximo:
+                print("El número que has elegido no pertenece a los intervalos definidos por el juego")
+        return elegido        
+                
 
 
 # PARTE 1 
