@@ -1,45 +1,56 @@
 import random
 MIN=0
 MAX=0
-
+maximo_intentos=0
+contador=1
 # Ahora se creará un menú con una selección de diversos niveles, que afectarán a la dificultad del juego
 
 while True:
-    nivel=input("Seleccione que nivel de dificultad quiere probar en esta partida, las opciones son:")
-    ("nivel simple, nivel intermedio, nivel avandado y si te atreves nivel experto")
-    try:
-        if nivel== "nivel simple":
+    nivel=input("Seleccione que nivel de dificultad quiere probar en esta partida, las opciones son:"
+    "nivel simple, nivel intermedio, nivel avandado y si te atreves nivel experto   ")
+    if nivel== "nivel simple":
             MAX=100
+            maximo_intentos=5
             break
-        elif nivel=="nivel intermedio":
+    elif nivel=="nivel intermedio":
             MAX=1000
+            maximo_intentos=15
             break
-        elif nivel=="nivel avanzado":
+    elif nivel=="nivel avanzado":
             MAX=1000000
+            maximo_intento=25
             break
-        elif nivel== "nivel experto":
+    elif nivel== "nivel experto":
             MAX=1000000000000
+            maximo_intento=35
             break
-    except:
-        pass
+    else:
+            pass
+
+
 
 
     # Ahora vamos a corroborar que el número elegido, es un número natural, y este...
     # .... se establece entre los intervalos de numeros naturales establecidos por el juego.  
 
     
-    def pedir_numero (maximo=MIN, minimo=MAX):
+    def pedir_numero (minimo=MIN,maximo=MAX):
+       
         while True:
-            elegido=input("Elige un número")
+            elegido=input("Elige un número:  ")
             try:
                 elegido=int(elegido)
             except:
                 pass
-            if minimo<= elegido >=maximo:
+            if minimo<= elegido <= maximo:
                 break
-            elif elegido <=minimo or elegido>=maximo:
-                print("El número que has elegido no pertenece a los intervalos definidos por el juego")
+            elif elegido<minimo or elegido>maximo:
+                print("Has introducido un número que está fuera de los intervalos del juego, escribe otro")
         return elegido        
+            
+                
+    
+               
                 
 
 
@@ -58,6 +69,37 @@ def complementacion():
     except:
         pass
     return pista
+
+
+
+# Ahora procederemos a plantear las condiciones del ejercicio, el cual irá indicando como de encaminado...
+#... vas en la partida que estás jugando, si has ganado, y si es el caso en cuantos intentos lo has hecho
+
+
+
+numero=random.randint(MIN,MAX)
+minimo=MIN
+maximo=MAX
+input("Has empezado el juego, escribe un número")
+contador=1
+
+while True:
+    jugada = pedir_numero(minimo,maximo)
+    if jugada<numero:
+        contador=contador+1
+        print("Te has quedado corto,sigue eligiendo")
+        
+    elif jugada>numero:
+        contador=contador+1
+        print("Te has pasado, sigue intentándolo   ")
+        
+    else:
+        print("Ha ganado el juego eres un campeón")
+        contador=contador+1
+        print("Enhorabuena, has superado el juego, para esto has necesitado",contador,"intentos, no está mal para tu edad")
+        break
+
+
 
 
 
