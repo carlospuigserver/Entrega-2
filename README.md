@@ -124,7 +124,7 @@ while True:
         print("Ha ganado el juego eres un campeón")
         contador=contador+1
         print("Enhorabuena, has superado el juego, para esto has necesitado",contador,"intentos, no está mal para tu edad")
-        break ´´´
+        break´´´
 
 
 
