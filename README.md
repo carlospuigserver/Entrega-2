@@ -24,7 +24,7 @@ De todas maneras, dejo el link por si no se ve del todo bien: https://www.figma.
 El código del programa es:
 
 
-´´´import random
+´´´import random´´´
 MIN=0
 MAX=0
 maximo_intentos=0
