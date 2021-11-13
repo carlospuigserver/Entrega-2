@@ -11,3 +11,11 @@ El diagrama de flujo del ejercicio es :
 
 <img width="561" alt="Diagrama de flujo figma adivinar el número" src="https://user-images.githubusercontent.com/91721643/141659325-2ae5b990-f326-4c51-b230-b5ee14e13908.png">
 
+
+
+De todas maneras, dejo el link por si no se ve del todo bien: https://www.figma.com/file/1rTi1Wp7cTVh2cJazBeVSi/Adivinar-el-n%C3%BAmero?node-id=0%3A1
+
+
+
+El código del programa es:
+
