@@ -6,25 +6,26 @@ contador=1
 # Ahora se creará un menú con una selección de diversos niveles, que afectarán a la dificultad del juego
 
 while True:
-    nivel=input("Seleccione que nivel de dificultad quiere probar en esta partida, las opciones son:"
-    "nivel simple, nivel intermedio, nivel avandado y si te atreves nivel experto   ")
-    if nivel== "nivel simple":
+    nivel=input("Seleccione que nivel de dificultad quiere probar en esta partida, las opciones son:nivel simple, nivel intermedio, nivel avandado y si te atreves nivel experto   ")
+    try:
+    
+        if nivel== "nivel simple":
             MAX=100
             maximo_intentos=5
             break
-    elif nivel=="nivel intermedio":
+        elif nivel=="nivel intermedio":
             MAX=1000
             maximo_intentos=15
             break
-    elif nivel=="nivel avanzado":
+        elif nivel=="nivel avanzado":
             MAX=1000000
             maximo_intento=25
             break
-    elif nivel== "nivel experto":
+        elif nivel== "nivel experto":
             MAX=1000000000000
             maximo_intento=35
             break
-    else:
+    except:
             pass
 
 
@@ -34,10 +35,10 @@ while True:
     # .... se establece entre los intervalos de numeros naturales establecidos por el juego.  
 
     
-    def pedir_numero (minimo=MIN,maximo=MAX):
+    def pedir_numero(minimo=MIN,maximo=MAX):
        
         while True:
-            elegido=input("Elige un número:  ")
+            elegido=input("Elige un número:  ")  
             try:
                 elegido=int(elegido)
             except:
@@ -80,19 +81,19 @@ def complementacion():
 numero=random.randint(MIN,MAX)
 minimo=MIN
 maximo=MAX
-input("Has empezado el juego, escribe un número")
+print("Has empezado el juego, escribe un número")
+
 contador=1
 
 while True:
-    jugada = pedir_numero(minimo,maximo)
+    jugada =pedir_numero(minimo,maximo)
     if jugada<numero:
         contador=contador+1
-        print("Te has quedado corto,sigue eligiendo")
-        
+        print("El número que has escrito es demasiado pequeño, sigue intentándolo")
     elif jugada>numero:
         contador=contador+1
-        print("Te has pasado, sigue intentándolo   ")
-        
+        print("El número que has escrito es demasiado grande, sigue intentándolo")
+
     else:
         print("Ha ganado el juego eres un campeón")
         contador=contador+1
