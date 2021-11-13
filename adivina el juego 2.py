@@ -43,17 +43,28 @@ while True:
                 
 
 
-# PARTE 1 
-numero = pedir_numero("Introduzca el numero a adivinar") 
- 
-# PARTE 2 
-while True: 
-    intento = pedir_numero("Adivine el número") 
-    if intento < numero: 
-        print("Demasiado pequeño") 
-    elif intento > numero: 
-        print("Demasiado grande") 
-    else: 
-        print ("¡Ha ganado!" )
-        break 
+# Ahore llevaremos a cabo una complementación del juego, si el jugador no ve muy claro que vaya a poder ganar el juego..
+# ... Le vamos a ofrecer la ayuda de decirle entre que intervalos está el número que busca, de esta manera el jugador...
+#.., tendrá una referencia y una idea más clara del número que está buscando
+
+
+def complementacion():
+    pista= input("¿Quieres recibir una pista a cerca del nivel que estás jugando?  Responder afirmativo o negativo")
+    try:
+        if pista=="afirmativo":
+            print(" el número está ccomprendido entre" +str(MIN))+ "y" + str(MAX)+":"
+        elif pista=="negativo":
+            print("No creo que vayas sobrado, pero si tienes confianza en ti mismo adelante")
+    except:
+        pass
+    return pista
+
+
+
+
+
+
+
+
+
 
