@@ -1,9 +1,31 @@
 import random
 MIN=0
-MAX=99
+MAX=0
 
-def pedir_numero(invitacion): 
-    invitacion+= " entre" + str(MIN)+ " y " +str(MAX)+ " :"
+# Ahora se creará un menú con una selección de diversos niveles, que afectarán a la dificultad del juego
+
+while True:
+    nivel=input("Seleccione que nivel de dificultad quiere probar en esta partida, las opciones son:")
+    ("nivel simple, nivel intermedio, nivel avandado y si te atreves nivel experto")
+    try:
+        if nivel== "nivel simple":
+            MAX=100
+            break
+        elif nivel=="nivel intermedio":
+            MAX=1000
+            break
+        elif nivel=="nivel avanzado":
+            MAX=1000000
+            break
+        elif nivel== "nivel experto":
+            MAX=1000000000000
+            break
+    except:
+        pass
+
+
+    # Ahora vamos a corroborar que el número elegido, es un número natural, y este...
+    # .... se establece entre los intervalos de numeros naturales establecidos por el juego.  
 
     
     while True: 
